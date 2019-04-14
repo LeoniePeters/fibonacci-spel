@@ -17,13 +17,23 @@ class FibonacciContainer extends Component {
       }
     }
     this.setState({ grid })
+  }
 
+  handleOnClick = (event) => {
+    const cellRowCol = event.target.id.split('-')
+    const row = Number(cellRowCol[0])
+    const col = Number(cellRowCol[1])
+    this.setState((state) => {
+      const grid = [...state.grid]
+      grid[row].forEach(e => e.number++)
+
+      return grid
+    })
   }
 
   render() {
-    console.log(this.state)
     return (
-      <Fibonacci grid={this.state.grid} />
+      <Fibonacci grid={this.state.grid} handleOnClick={this.handleOnClick} />
     )
   }
 }
