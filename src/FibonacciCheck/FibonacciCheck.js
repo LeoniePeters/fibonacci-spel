@@ -12,7 +12,7 @@ export default function FibonacciCheck(row) {
     const arr = [num, array[index + 1], array[index + 2], array[index + 3],
       array[index + 4]];
     //check if the array of 5 follows Fibonacci sequence
-    if ((arr[2] === (arr[1] + arr[0]) &&
+    if (!arr.includes(0) && (arr[2] === (arr[1] + arr[0]) &&
       arr[3] === (arr[2] + arr[1]) &&
       arr[4] === (arr[3] + arr[2]))) {
       return index
