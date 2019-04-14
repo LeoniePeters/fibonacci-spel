@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Fibonacci.css'
 import Fibonacci from './Fibonacci'
+import FibonacciCheck from '../FibonacciCheck/FibonacciCheck'
 
 class FibonacciContainer extends Component {
   state = {}
@@ -28,6 +29,18 @@ class FibonacciContainer extends Component {
       grid[row].forEach(e => e.number++)
       grid.forEach(e1 => e1.find(e2 => e2.column === col).number++)
       grid[row].find(e => e.column === col).number--
+      //
+      grid.forEach(row => {
+        const fibonacciIndex = FibonacciCheck(row)
+        if (fibonacciIndex) {
+          for (let k = fibonacciIndex; k < (fibonacciIndex + 5); k++)
+            row[k].number = 0
+        }
+      }
+      )
+      // console.log(
+      //   FibonacciCheck(grid[0])
+      // )
       return grid
     })
   }
