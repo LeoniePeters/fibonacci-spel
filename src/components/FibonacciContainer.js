@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Fibonacci.css'
 import Fibonacci from './Fibonacci'
+import FibonacciCheck from '../FibonacciCheck/FibonacciCheck'
 
 class FibonacciContainer extends Component {
   state = {}
