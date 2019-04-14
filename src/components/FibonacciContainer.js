@@ -33,13 +33,13 @@ class FibonacciContainer extends Component {
       grid.forEach(row => {
         const fibonacciIndex = FibonacciCheck(row)
         if (fibonacciIndex) {
-          row[fibonacciIndex] = 0
+          row[fibonacciIndex].number = 0
         }
       }
       )
-      console.log(
-        FibonacciCheck(grid[0])
-      )
+      // console.log(
+      //   FibonacciCheck(grid[0])
+      // )
       return grid
     })
   }
