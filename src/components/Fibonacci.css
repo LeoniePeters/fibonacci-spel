@@ -8,4 +8,13 @@
   border: 0.5px solid gray;
   padding: 1px;
   font-size: 80%; 
-    }
+}
+
+@keyframes yellow {
+  from {
+    background-color: white
+  }
+  to {
+    background-color: #ffcc00
+  }
+}    
