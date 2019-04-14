@@ -29,6 +29,11 @@ class FibonacciContainer extends Component {
       grid[row].forEach(e => e.number++)
       grid.forEach(e1 => e1.find(e2 => e2.column === col).number++)
       grid[row].find(e => e.column === col).number--
+      //
+      const gridOfNumbers = grid.map(row => row.map(e => e.number))
+      console.log(
+        FibonacciCheck(gridOfNumbers[0])
+      )
       return grid
     })
   }
