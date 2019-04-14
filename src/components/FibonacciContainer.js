@@ -45,8 +45,10 @@ class FibonacciContainer extends Component {
       grid.forEach(row => {
         const fibonacciIndex = FibonacciCheck(row)
         if (fibonacciIndex) {
-          for (let k = fibonacciIndex; k < (fibonacciIndex + 5); k++)
+          for (let k = fibonacciIndex; k < (fibonacciIndex + 5); k++) {
+            row[k].color = 'green 0.5s linear 2 alternate'
             row[k].number = 0
+          }
         }
       }
       )

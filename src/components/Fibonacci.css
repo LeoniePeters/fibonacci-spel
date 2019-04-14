@@ -18,3 +18,12 @@
     background-color: #ffcc00
   }
 }    
+
+@keyframes green {
+  from {
+    background-color: white
+  }
+  to {
+    background-color: #07913c
+  }
+}    
