@@ -4,8 +4,9 @@
 the Fibonacci sequence. */
 
 export default function FibonacciCheck(row) {
+  const rowOfNumbers = row.map(cell => cell.number)
   //.some checks if true for some element in the array
-  const findFibonacci = row.findIndex((num, index, array) => {
+  const findFibonacci = rowOfNumbers.findIndex((num, index, array) => {
     // //stops the check at the 5th last element. Not needed
     // if (index < array.length - 4) {
     //make array with next 5 element in array
