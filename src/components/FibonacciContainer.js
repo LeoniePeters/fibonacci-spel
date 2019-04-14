@@ -33,7 +33,8 @@ class FibonacciContainer extends Component {
       grid.forEach(row => {
         const fibonacciIndex = FibonacciCheck(row)
         if (fibonacciIndex) {
-          row[fibonacciIndex].number = 0
+          for (let k = fibonacciIndex; k < (fibonacciIndex + 5); k++)
+            row[k].number = 0
         }
       }
       )
