@@ -1,0 +1,11 @@
+.grid-container {
+  border-spacing: 1px;
+}
+
+.cellData {
+  min-width: 22px;
+  height: 22px;
+  border: 0.5px solid gray;
+  padding: 1px;
+  font-size: 80%; 
+    }

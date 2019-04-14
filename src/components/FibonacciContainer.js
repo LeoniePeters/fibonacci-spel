@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Fibonacci.css'
 import Fibonacci from './Fibonacci'
 
 class FibonacciContainer extends Component {

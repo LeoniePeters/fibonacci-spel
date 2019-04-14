@@ -2,11 +2,9 @@ import React from 'react';
 
 function renderCell(cellObject) {
   return (
-    <button
-      className={cellObject.column}
-      key={`${cellObject.row}-${cellObject.column}`}>
-      {cellObject.number}
-    </button>
+    <td className='cellData' key={`${cellObject.row}-${cellObject.column}`}>
+      {cellObject.number === 0 ? '' : cellObject.number}
+    </td>
   )
 }
 
@@ -14,10 +12,18 @@ export default function Fibonacci({ grid }) {
   return (
     <div>
       <h1>Fibonacci spel</h1>
-      <div className='grid-container'>
-        {grid.map((gridRow, gridRowIndex) => <div key={gridRowIndex}>
-          {gridRow.map(gridCell => renderCell(gridCell))}</div>)}
-      </div>
+      <table className='grid-container'>
+        <tbody>
+          {grid.map((gridRow, gridRowIndex) => <tr className='tableRow'
+            key={gridRowIndex}>
+            {gridRow.map(gridCell => renderCell(gridCell))}</tr>)}
+        </tbody>
+      </table>
     </div>
   )
 }
+
+/* <button
+      className='cellButton'
+      key={`${cellObject.row}-${cellObject.column}`}> */
+/* </button> */
