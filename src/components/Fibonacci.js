@@ -4,7 +4,7 @@ function renderCell(cellObject, handleOnClick) {
   return (
     <td className='cellData' id={`${cellObject.row}-${cellObject.column}`}
       key={`${cellObject.row}-${cellObject.column}`}
-      onClick={handleOnClick}>
+      onClick={handleOnClick} style={{ animation: cellObject.color }}>
       {cellObject.number === 0 ? '' : cellObject.number}
     </td>
   )
