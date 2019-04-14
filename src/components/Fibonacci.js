@@ -1,8 +1,31 @@
 import React from 'react';
 
-export default function Fibonacci(props) {
-
+function renderCell(cellObject, handleOnClick) {
   return (
-    <div></div>
+    <td className='cellData' id={`${cellObject.row}-${cellObject.column}`}
+      key={`${cellObject.row}-${cellObject.column}`}
+      onClick={handleOnClick}>
+      {cellObject.number === 0 ? '' : cellObject.number}
+    </td>
   )
 }
+
+export default function Fibonacci({ grid, handleOnClick }) {
+  return (
+    <div>
+      <h1>Fibonacci spel</h1>
+      <table className='grid-container'>
+        <tbody>
+          {grid.map((gridRow, gridRowIndex) => <tr className='tableRow'
+            key={gridRowIndex}>
+            {gridRow.map(gridCell => renderCell(gridCell, handleOnClick))}</tr>)}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+/* <button
+      className='cellButton'
+      key={`${cellObject.row}-${cellObject.column}`}> */
+/* </button> */
