@@ -5,6 +5,9 @@ class FibonacciContainer extends Component {
   state = {}
 
   componentWillMount() {
+    /*This loop creates a grid. Each nested array resembles a row cells. 
+    Each array element is an object containing info about the row, column and 
+    (display)number for that cell.*/
     const grid = [];
     for (let i = 0; i < 50; i++) {
       grid.push([]);
@@ -19,7 +22,7 @@ class FibonacciContainer extends Component {
   render() {
     console.log(this.state)
     return (
-      <Fibonacci />
+      <Fibonacci grid={this.state.grid} />
     )
   }
 }
