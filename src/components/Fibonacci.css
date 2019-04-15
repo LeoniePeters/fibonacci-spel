@@ -1,6 +1,7 @@
 .fibonacciComponent {
   font-family: helvetica; 
 }
+
 .grid-container {
   border-spacing: 1px;
 }
@@ -33,6 +34,6 @@
   }
   to {
     background-color: #0bc452;
-    font-size: 130%;
+    font-size: 110%;
   }
 }    

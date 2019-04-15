@@ -25,7 +25,7 @@ class FibonacciContainer extends Component {
       const grid = [...state.grid]
       grid.forEach(row => row.forEach(
         cell => {
-          if (cell.color === 'green 0.5s linear 2 alternate') {
+          if (cell.color === 'green 1s linear 2 alternate') {
             cell.number = 0;
             cell.color = ''
           } else { cell.color = '' }
@@ -59,7 +59,7 @@ class FibonacciContainer extends Component {
             const startIndex = Number(fiboInfoArray[0])
             const lastIndex = (startIndex + Number(fiboInfoArray[1]))
             for (let k = startIndex; k < lastIndex; k++) {
-              row[k].color = 'green 0.5s linear 2 alternate'
+              row[k].color = 'green 1s linear 2 alternate'
             }
           })
         }
@@ -68,7 +68,7 @@ class FibonacciContainer extends Component {
       return grid
     })
     setTimeout(
-      this.resetCells, 1000);
+      this.resetCells, 2000);
   }
 
   render() {
