@@ -20,11 +20,17 @@ class FibonacciContainer extends Component {
     this.setState({ grid })
   }
 
-  resetColor = () => {
+  resetCells = () => {
     this.setState((state) => {
       const grid = [...state.grid]
-      grid.forEach(row => row.forEach(cell => cell.color = ''))
-      return grid;
+      grid.forEach(row => row.forEach(
+        cell => {
+          if (cell.color === 'green 0.5s linear 2 alternate') {
+            cell.number = 0;
+            cell.color = ''
+          } else { cell.color = '' }
+        }))
+      return grid
     })
   }
 
@@ -34,26 +40,26 @@ class FibonacciContainer extends Component {
     const col = Number(cellRowCol[1])
     this.setState((state) => {
       const grid = [...state.grid]
-      grid[row].forEach(e => { e.number++; e.color = 'yellow 0.5s linear 2 alternate' })
+      grid[row].forEach(e => {
+        e.number++;
+        e.color = 'yellow 0.2s linear 2 alternate'
+      })
       grid.forEach(e1 => {
         const cell = e1.find(e2 => e2.column === col)
         cell.number++;
-        cell.color = 'yellow 0.5s linear 2 alternate'
+        cell.color = 'yellow 0.2s linear 2 alternate'
       })
       grid[row].find(e => e.column === col).number--
       //
       grid.forEach(row => {
         const fibonacciIndexes = FibonacciCheck(row)
         if (fibonacciIndexes.length > 0) {
-          console.log(fibonacciIndexes)
           fibonacciIndexes.forEach(fiboInfo => {
             const fiboInfoArray = fiboInfo.split('-')
             const startIndex = Number(fiboInfoArray[0])
             const lastIndex = (startIndex + Number(fiboInfoArray[1]))
-            console.log(startIndex, 'and', lastIndex)
             for (let k = startIndex; k < lastIndex; k++) {
               row[k].color = 'green 0.5s linear 2 alternate'
-              row[k].number = 0
             }
           })
         }
@@ -62,7 +68,7 @@ class FibonacciContainer extends Component {
       return grid
     })
     setTimeout(
-      this.resetColor, 1000);
+      this.resetCells, 1000);
   }
 
   render() {
