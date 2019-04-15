@@ -12,7 +12,7 @@ function renderCell(cellObject, handleOnClick) {
 
 export default function Fibonacci({ grid, handleOnClick }) {
   return (
-    <div>
+    <div className='fibonacciComponent'>
       <h1>Fibonacci spel</h1>
       <table className='grid-container'>
         <tbody>
@@ -24,8 +24,3 @@ export default function Fibonacci({ grid, handleOnClick }) {
     </div>
   )
 }
-
-/* <button
-      className='cellButton'
-      key={`${cellObject.row}-${cellObject.column}`}> */
-/* </button> */
