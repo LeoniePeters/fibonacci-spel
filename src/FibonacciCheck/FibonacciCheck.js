@@ -1,5 +1,5 @@
-/*This function checks if a row contains sequences of at least 5 numbers pertaining
-the Fibonacci sequence. */
+/*This function checks if a row contains a sequences of at least 5 numbers 
+of the Fibonacci sequence. */
 
 export default function FibonacciCheck(row) {
   //turns array of objects to array of numbers
@@ -44,7 +44,7 @@ export default function FibonacciCheck(row) {
 }
 
 //to test output
-console.log(FibonacciCheck([{ number: 8 }, { number: 13 }, { number: 25 }, { number: 144 },
-{ number: 233 }, { number: 377 }, { number: 610 }, { number: 987 },
-{ number: 0 }, { number: 1 }, { number: 1 }, { number: 2 }, { number: 3 },
-{ number: 5 }, { number: 8 }, { number: 13 }, { number: 21 }]))
+// console.log(FibonacciCheck([{ number: 8 }, { number: 13 }, { number: 25 }, 
+// { number: 144 }, { number: 233 }, { number: 377 }, { number: 610 }, 
+// { number: 987 }, { number: 0 }, { number: 1 }, { number: 1 }, { number: 2 }, 
+// { number: 3 }, { number: 5 }, { number: 8 }, { number: 13 }, { number: 21 }]))
