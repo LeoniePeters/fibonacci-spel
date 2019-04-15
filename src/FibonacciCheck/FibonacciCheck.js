@@ -37,22 +37,27 @@ export default function FibonacciCheck(row) {
     [num, array[index + 1], array[index + 2]])
   /*checks for each element (nested array) of arrayOfSubsequentNumbers if 
   Fibonacci (reduceRight(fiboReducer) = 0). 
-  If Fibonacci, push element's index to indexArray, else push hyphen*/
+  If Fibonacci, push element's index to indexArray, else push x*/
   arrayOfSubsequentNumbers.forEach((nestedArray, index) =>
     nestedArray.reduceRight(fiboReducer) === 0 ?
-      indexArray.push(index) : indexArray.push('-')
+      indexArray.push(`${index}_`) : indexArray.push('x')
   )
   /*turns indexArray into array of strings. 
-  Each string is sequence of indexes of numbers partaining to the Fibonacci sequence.*/
-  const fiboIndexes = indexArray.join('').split('-').filter(e => e.length >= 3)[0]
-  return `${fiboIndexes[0]}-${fiboIndexes.length + 2}`
+  Each string is sequence of indexes of numbers partaining to the 
+  Fibonacci sequence.*/
+  const fiboIndexes = indexArray.join('')
+    .split('x')
+    .filter(e => e.length >= 6)
+
+  return fiboIndexes[0].split('_')
+  //`${fiboIndexes[0]}-${fiboIndexes.length + 2}`
 }
 
-console.log(FibonacciCheck([{ number: 8 }, { number: 55 }, { number: 89 }, { number: 144 },
+console.log(FibonacciCheck([{ number: 0 }, { number: 1 }, { number: 1 }, { number: 2 },
+{ number: 3 }, { number: 5 }, { number: 3 }, { number: 5 }, { number: 8 }, { number: 55 }, { number: 89 }, { number: 144 },
 { number: 233 }, { number: 377 }, { number: 610 }, { number: 987 }]))
 //3,4,5
-//{ number: 0 }, { number: 1 }, { number: 1 }, { number: 2 },
-//{ number: 3 }, { number: 5 }, { number: 3 }, { number: 5 },
+
 
 /*
   //.forEach(e => {
