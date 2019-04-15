@@ -42,7 +42,10 @@ export default function FibonacciCheck(row) {
     nestedArray.reduceRight(fiboReducer) === 0 ?
       indexArray.push(index) : indexArray.push('-')
   )
-  return indexArray
+  /*turns indexArray into array of strings. 
+  Each string is sequence of indexes of numbers partaining to the Fibonacci sequence.*/
+  const fiboIndexes = indexArray.join('').split('-').filter(e => e.length >= 3)[0]
+  return `${fiboIndexes[0]}-${fiboIndexes.length + 2}`
 }
 
 console.log(FibonacciCheck([{ number: 8 }, { number: 55 }, { number: 89 }, { number: 144 },
@@ -51,9 +54,7 @@ console.log(FibonacciCheck([{ number: 8 }, { number: 55 }, { number: 89 }, { num
 //{ number: 0 }, { number: 1 }, { number: 1 }, { number: 2 },
 //{ number: 3 }, { number: 5 }, { number: 3 }, { number: 5 },
 
-/*  //turns indexArray into array
-  const arr = indexArray.join('').split('-').filter(e => e.length >= 3)
-  return arr
+/*
   //.forEach(e => {
-  //if (e.length >= 3) return `${e[0]}-${e.length}`
+  //if (e.length >= 3) return `${ e[0] } -${ e.length } `
   //})*/
