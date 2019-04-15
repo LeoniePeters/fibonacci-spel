@@ -13,7 +13,7 @@ function renderCell(cellObject, handleOnClick) {
 export default function Fibonacci({ grid, handleOnClick }) {
   return (
     <div className='fibonacciComponent'>
-      <h1>Fibonacci spel</h1>
+      <h1 id='fibonacciTitle'>Fibonacci spel</h1>
       <table className='grid-container'>
         <tbody>
           {grid.map((gridRow, gridRowIndex) => <tr className='tableRow'

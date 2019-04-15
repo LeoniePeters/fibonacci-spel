@@ -1,5 +1,11 @@
 .fibonacciComponent {
+  background-image: url('./GoldenRatioIcon.png');
+  background-repeat: repeat-x;
   font-family: helvetica; 
+  width: 1320px;
+}
+#fibonacciTitle {
+  padding: 40px 0px 25px 35px;
 }
 
 .grid-container {
@@ -7,12 +13,12 @@
 }
 
 .cellData {
-  min-width: 22px;
-  height: 22px;
   background-color: rgb(236, 230, 230);
   border: 0.5px solid gray;
-  padding: 1px;
   font-size: 80%; 
+  height: 22px;
+  min-width: 22px;
+  padding: 1px;
   text-align: center
 }
 
