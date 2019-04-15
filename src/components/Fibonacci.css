@@ -1,29 +1,45 @@
+.fibonacciComponent {
+  background-image: url('./GoldenRatioIcon.png');
+  background-repeat: repeat-x;
+  font-family: helvetica; 
+  width: 1320px;
+}
+#fibonacciTitle {
+  padding: 40px 0px 25px 35px;
+}
+
 .grid-container {
   border-spacing: 1px;
 }
 
 .cellData {
-  min-width: 22px;
-  height: 22px;
+  background-color: rgb(236, 230, 230);
   border: 0.5px solid gray;
-  padding: 1px;
   font-size: 80%; 
+  height: 22px;
+  min-width: 22px;
+  padding: 1px;
+  text-align: center
 }
 
 @keyframes yellow {
   from {
-    background-color: white
+    background-color: rgb(236, 230, 230);
+    font-size: 80%;
   }
   to {
-    background-color: #ffcc00
+    background-color: #ffcc00;
+    font-size: 100%;
   }
 }    
 
 @keyframes green {
   from {
-    background-color: white
+    background-color: rgb(236, 230, 230);
+    font-size: 80%;
   }
   to {
-    background-color: #07913c
+    background-color: #0bc452;
+    font-size: 110%;
   }
 }    
