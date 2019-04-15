@@ -1,29 +1,5 @@
-// import React from 'react'
-
-/*This function checks if a row contains a sequence of 5 numbers partaining
+/*This function checks if a row contains sequences of at least 5 numbers pertaining
 the Fibonacci sequence. */
-
-// export default function FibonacciCheck(row) {
-//   const rowOfNumbers = row.map(cell => cell.number)
-//   //.some checks if true for some element in the array
-//   const findFibonacci = rowOfNumbers.findIndex((num, index, array) => {
-//     // //stops the check at the 5th last element. Not needed
-//     // if (index < array.length - 4) {
-//     //make array with next 5 element in array
-//     const arr = [num, array[index + 1], array[index + 2], array[index + 3],
-//       array[index + 4]];
-//     //check if the array of 5 follows Fibonacci sequence
-//     if (!arr.includes(0) && (arr[2] === (arr[1] + arr[0]) &&
-//       arr[3] === (arr[2] + arr[1]) &&
-//       arr[4] === (arr[3] + arr[2]))) {
-//       return index
-//     }
-//   }
-//     //  }
-//   )
-//   if (findFibonacci === -1) return false
-//   else return findFibonacci
-// }
 
 export default function FibonacciCheck(row) {
   //turns array of objects to array of numbers
@@ -45,28 +21,30 @@ export default function FibonacciCheck(row) {
       nestedArray.reduceRight(fiboReducer) === 0 ?
       indexArray.push(`${index}_`) : indexArray.push('x')
   )
-  /*turns indexArray into array of strings. 
-  Each string is sequence of indexes of numbers partaining to the 
-  Fibonacci sequence.*/
-  console.log(indexArray)
+  /*turns indexArray into array of strings of format startindex-length. 
+  1. joins all indexes so it can
+  2. split again indexes and get rid of x's (i.e. not part of Fibonacci sequence)
+  3. map to turn strings into arrays of indexes (gets rid of the _ seperators)
+  4. filter where fibonacci sequence is 5 or longer 
+  (length check is 3. arrayOfSubsequentNumbers check for each element +2 
+    following. 3 + 2 = 5.
+  5. map over leftover arrays and turn them in strings of representing 
+  startIndex-length of found Fibonacci sequence*/
   const fiboIndexes = indexArray.join('')
     .split('x')
-    .filter(e => e.length >= 6)
     .map(e => {
-      const arrE = e.split('_');
-      return `${arrE[0]}-${arrE.length + 1}`
+      const indexArr = e.split('_');
+      indexArr.pop();
+      return indexArr
     })
+    .filter(e => e.length >= 3)
+    .map(e => `${e[0]}-${e.length + 2}`)
 
   return fiboIndexes
 }
 
-console.log(FibonacciCheck([{ number: 0 }, { number: 1 }, { number: 1 }, { number: 2 },
-{ number: 3 }, { number: 5 }, { number: 3 }, { number: 5 }, { number: 8 }, { number: 55 }, { number: 89 }, { number: 144 },
-{ number: 233 }, { number: 377 }, { number: 610 }, { number: 987 }]))
-//3,4,5
-
-
-/*
-  //.forEach(e => {
-  //if (e.length >= 3) return `${ e[0] } -${ e.length } `
-  //})*/
+//to test output
+console.log(FibonacciCheck([{ number: 8 }, { number: 13 }, { number: 25 }, { number: 144 },
+{ number: 233 }, { number: 377 }, { number: 610 }, { number: 987 },
+{ number: 0 }, { number: 1 }, { number: 1 }, { number: 2 }, { number: 3 },
+{ number: 5 }, { number: 8 }, { number: 13 }, { number: 21 }]))
