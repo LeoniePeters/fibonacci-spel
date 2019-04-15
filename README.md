@@ -1,33 +1,21 @@
-# Fibonacci Spel
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a47bd421-b7e0-4a62-9a0f-52180d413f59/deploy-status)](https://app.netlify.com/sites/fibonacci-spel/deploys)
+# :shell: Fibonacci Spel :sunflower:
 
-Coding assignment
+This is a project for a coding assignment
 
+## [Deployed version on Netlify](https://fibonacci-spel.netlify.com/)
 
+To run locally: `npm start`  
+Open http://localhost:3000 to view it in the browser.
+
+To run the test for the FibonacciCheck function: `npm test`
+
+### Techniques used:
+- Javascript
+- React
+- CSS
+- HTML
+- Jest
+
+----------------------------------------------------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
