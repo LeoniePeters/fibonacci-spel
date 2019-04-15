@@ -48,8 +48,12 @@ export default function FibonacciCheck(row) {
   const fiboIndexes = indexArray.join('')
     .split('x')
     .filter(e => e.length >= 6)
+    .map(e => {
+      const arrE = e.split('_');
+      return `${arrE[0]}-${arrE.length + 1}`
+    })
 
-  return fiboIndexes[0].split('_')
+  return fiboIndexes
   //`${fiboIndexes[0]}-${fiboIndexes.length + 2}`
 }
 
