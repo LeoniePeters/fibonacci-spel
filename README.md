@@ -5,6 +5,9 @@ This is a project for a coding assignment
 
 ## [Deployed version on Netlify](https://fibonacci-spel.netlify.com/)
 
+### How it looks:
+![game view](fibonacci06.gif)
+
 To run locally: `npm start`  
 Open http://localhost:3000 to view it in the browser.
 
