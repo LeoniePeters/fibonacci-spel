@@ -32,13 +32,13 @@ export default function FibonacciCheck(row) {
   startIndex-length of found Fibonacci sequence*/
   const fiboIndexes = indexArray.join('')
     .split('x')
-    .map(e => {
-      const indexArr = e.split('_');
+    .map(stringOfIndexes => {
+      const indexArr = stringOfIndexes.split('_');
       indexArr.pop();
       return indexArr
     })
-    .filter(e => e.length >= 3)
-    .map(e => `${e[0]}-${e.length + 2}`)
+    .filter(indexArr => indexArr.length >= 3)
+    .map(fiboIndexArr => `${fiboIndexArr[0]}-${fiboIndexArr.length + 2}`)
 
   return fiboIndexes
 }
