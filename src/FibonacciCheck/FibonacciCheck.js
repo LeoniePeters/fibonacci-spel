@@ -35,16 +35,20 @@ export default function FibonacciCheck(row) {
   //turns array of numbers into array of nested arrays of format [e, e+1 e+2]
   const arrayOfSubsequentNumbers = rowOfNumbers.map((num, index, array) =>
     [num, array[index + 1], array[index + 2]])
-  /*checks for each element (nested array) of arrayOfSubsequentNumbers if 
+  /*Fibonacci check:
+  1. exclude zeros
+  2. checks for each element (a nested array) of arrayOfSubsequentNumbers if 
   Fibonacci (reduceRight(fiboReducer) = 0). 
   If Fibonacci, push element's index to indexArray, else push x*/
   arrayOfSubsequentNumbers.forEach((nestedArray, index) =>
-    nestedArray.reduceRight(fiboReducer) === 0 ?
+    !nestedArray.includes(0) &&
+      nestedArray.reduceRight(fiboReducer) === 0 ?
       indexArray.push(`${index}_`) : indexArray.push('x')
   )
   /*turns indexArray into array of strings. 
   Each string is sequence of indexes of numbers partaining to the 
   Fibonacci sequence.*/
+  console.log(indexArray)
   const fiboIndexes = indexArray.join('')
     .split('x')
     .filter(e => e.length >= 6)
@@ -54,7 +58,6 @@ export default function FibonacciCheck(row) {
     })
 
   return fiboIndexes
-  //`${fiboIndexes[0]}-${fiboIndexes.length + 2}`
 }
 
 console.log(FibonacciCheck([{ number: 0 }, { number: 1 }, { number: 1 }, { number: 2 },
